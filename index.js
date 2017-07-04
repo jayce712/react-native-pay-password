@@ -1,7 +1,9 @@
 import InputView from './src/InputView';
 import Keyborad from './src/Keyborad';
+import PasswordInput from './src/PasswordInput';
 
-export default {
+export {
   InputView,
   Keyborad,
+  PasswordInput,
 }

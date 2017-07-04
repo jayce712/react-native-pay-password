@@ -24,7 +24,7 @@ class InputView extends PureComponent {
       if (i === length - 1) borderRightWidth = 0;
       items.push(
         <View key={i} style={[styles.itemView, { borderRightWidth: borderRightWidth, borderRightColor: borderColor }]}>
-          <Text style={[styles.text, this.props.textStyle]}>{index >= i ? this.text : ''}</Text>
+          <Text style={[styles.text, this.props.textStyle]}>{index > i ? this.text : ''}</Text>
         </View>
       );
     };

@@ -4,20 +4,21 @@ import {
   Text,
   Image,
   TouchableHighlight,
-  StyleSheet
+  Dimensions,
+  StyleSheet,
 } from 'react-native';
 import deleteImg from './delete.png';
 
 class Keyboard extends PureComponent {
 
   static defaultProps = {
-    pushNum: () => { },
-    popNum: () => { }
+    onPress: () => { },
+    onDelete: () => { }
   }
 
   renderItem(text) {
     return (
-      <TouchableHighlight style={styles.item} onPress={() => { this.props.pushNum(text) }} underlayColor={'#F5F5F5'}>
+      <TouchableHighlight style={styles.item} onPress={() => { this.props.onPress(text) }} underlayColor={'#F5F5F5'}>
         <Text style={styles.text}>{text}</Text>
       </TouchableHighlight>
     )
@@ -25,15 +26,16 @@ class Keyboard extends PureComponent {
 
   renderDelete() {
     return (
-      <TouchableHighlight style={styles.item} onPress={() => { this.props.popNum() }} underlayColor={'#F5F5F5'}>
+      <TouchableHighlight style={styles.item} onPress={() => { this.props.onDelete() }} underlayColor={'#F5F5F5'}>
         <Image source={deleteImg} resizeMode={'contain'} style={{ height: 40 }} />
       </TouchableHighlight>
     )
   }
 
   render() {
+    const { style } = this.props;
     return (
-      <View style={{ width: 360, backgroundColor: '#FFFFFF' }}>
+      <View style={[styles.keyboardView, style]}>
         <View style={styles.itemView}>
           {this.renderItem('1')}
           {this.renderItem('2')}
@@ -60,6 +62,12 @@ class Keyboard extends PureComponent {
 }
 
 const styles = StyleSheet.create({
+  keyboardView: {
+    width: Dimensions.get('window').width,
+    backgroundColor: '#FFFFFF',
+    borderTopWidth: 0.5,
+    borderColor: '#C7C7C7'
+  },
   itemView: {
     height: 60,
     flexDirection: 'row',
