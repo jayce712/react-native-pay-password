@@ -1,12 +1,12 @@
 import React from 'react';
-import { ViewProperties, TextProperties } from 'react-native';
+import { ViewStyle, TextStyle } from 'react-native';
 
 interface InputViewProps {
   length: number
   index: number
   borderColor?: string
-  style?: ViewProperties
-  textStyle?: TextProperties
+  style?: ViewStyle
+  textStyle?: TextStyle
 }
 
 interface KeyboardProps {
