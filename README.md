@@ -19,7 +19,7 @@ import { PasswordInput } from 'react-native-pay-password';
 
 | 属性        | 说明           | 类型               | 默认值       |
 |------------|----------------|--------------------|--------------|
-| onDone   | 支付密码输入后的回调   | Function | -  |
+| onDone   | 支付密码输入后的回调,(password)=>{}   | Function | -  |
 | clear    | 打开键盘时是否清空已输入   | boolean  |  true  |
 | length    | 支付密码的长度   | number  |  6  |
 | borderColor   | 支付密码显示框的边框颜色    | string |  #C7C7C7  |
@@ -35,7 +35,7 @@ import { PasswordModal } from 'react-native-pay-password';
 
 | 属性        | 说明           | 类型               | 默认值       |
 |------------|----------------|--------------------|--------------|
-| onDone   | 支付密码输入后的回调   | Function | -  |
+| onDone   | 支付密码输入后的回调,(password)=>{}   | Function | -  |
 | clear    | 打开键盘时是否清空已输入   | boolean  |  true  |
 | backdrop    | 打开modal页面是否显示遮罩层   | boolean  |  true  |
 | height    | 打开modal页面的高度   | number  |  400  |
@@ -69,6 +69,6 @@ import { Keyboard } from 'react-native-pay-password';
 
 | 属性        | 说明           | 类型               | 默认值       |
 |------------|----------------|--------------------|--------------|
-| onPress    | 按下数字`0~9`的回调   |  Function |    |
-| onDelete   | 按下`删除键`的回调   | Function | -  |
+| onPress    | 按下数字`0~9`的回调,(text)=>{}    |  Function |    |
+| onDelete   | 按下`删除键`的回调,()=>{}   | Function | -  |
 | rerender   | 该组件是否重新渲染    | boolean | true  |
