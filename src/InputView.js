@@ -32,6 +32,7 @@ class InputView extends PureComponent {
   }
 
   render() {
+    console.log('InputView rerender')
     const { style, length, borderColor } = this.props;
     return (
       <View style={[styles.inputView, { width: length * 50, borderWidth: 0.5, borderColor: borderColor }, style]}>

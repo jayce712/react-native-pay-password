@@ -1,9 +1,11 @@
 import InputView from './src/InputView';
-import Keyborad from './src/Keyborad';
+import Keyboard from './src/Keyboard';
 import PasswordInput from './src/PasswordInput';
+import PasswordModal from './src/PasswordModal';
 
 export {
   InputView,
-  Keyborad,
+  Keyboard,
   PasswordInput,
+  PasswordModal
 }

@@ -7,13 +7,21 @@ import {
   StyleSheet
 } from 'react-native';
 import InputView from './InputView';
-import Keyborad from './Keyborad';
+import Keyboard from './Keyboard';
 
 class PasswordInput extends PureComponent {
 
-  state = { visible: false, number: '' }
+  static defaultProps = {
+    length: 6,
+    clear: true,
+  }
+
+  state = { visible: false, password: '' }
 
   show() {
+    if (this.props.clear && this.state.password) {
+      this.setState({ password: '' });
+    }
     this.setState({ visible: true })
   }
 
@@ -22,21 +30,30 @@ class PasswordInput extends PureComponent {
   }
 
   conectText(text) {
-    let number = this.state.number + text;
-    this.setState({ number: number });
+    let nextPassword = this.state.password + text;
+    if (nextPassword.length > this.props.length) return null;
+    this.setState({ password: nextPassword });
+    if (nextPassword.length === this.props.length) {
+      this.props.onDone && this.props.onDone(nextPassword);
+      this.hide();
+    };
   }
 
-
+  onDelete() {
+    let password = this.state.password;
+    this.setState({ password: password.substring(0, password.length - 1) });
+  }
 
   render() {
+    const { onDone, ...rest } = this.props;
     return (
       <View>
         <TouchableOpacity onPress={() => { this.show() }} activeOpacity={0.6}>
-          <InputView index={this.state.number.length} />
+          <InputView index={this.state.password.length} {...rest} />
         </TouchableOpacity>
         <Modal animationType={'slide'} visible={this.state.visible} onRequestClose={() => { this.hide() }} transparent>
           <TouchableOpacity style={{ flex: 1 }} onPress={() => { this.hide() }} activeOpacity={1}>
-            <Keyborad style={styles.keyborad} onPress={(text) => { this.conectText(text) }} />
+            <Keyboard style={styles.keyborad} onPress={(text) => { this.conectText(text) }} onDelete={() => { this.onDelete() }} />
           </TouchableOpacity>
         </Modal>
       </View>

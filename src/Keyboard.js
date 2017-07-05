@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import {
   View,
   Text,
@@ -9,11 +9,16 @@ import {
 } from 'react-native';
 import deleteImg from './delete.png';
 
-class Keyboard extends PureComponent {
+class Keyboard extends Component {
 
   static defaultProps = {
     onPress: () => { },
-    onDelete: () => { }
+    onDelete: () => { },
+    rerender: false
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    return !!nextProps.rerender;
   }
 
   renderItem(text) {
@@ -27,12 +32,13 @@ class Keyboard extends PureComponent {
   renderDelete() {
     return (
       <TouchableHighlight style={styles.item} onPress={() => { this.props.onDelete() }} underlayColor={'#F5F5F5'}>
-        <Image source={deleteImg} resizeMode={'contain'} style={{ height: 40 }} />
+        <Image source={deleteImg} resizeMode={'contain'} style={{ height: 35 }} />
       </TouchableHighlight>
     )
   }
 
   render() {
+    console.log('Keyboard rerender')
     const { style } = this.props;
     return (
       <View style={[styles.keyboardView, style]}>
@@ -81,7 +87,7 @@ const styles = StyleSheet.create({
     borderColor: '#C7C7C7'
   },
   text: {
-    fontSize: 23,
+    fontSize: 25,
     color: '#333333'
   }
 })
