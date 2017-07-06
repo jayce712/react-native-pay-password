@@ -84,8 +84,8 @@ export default class App extends Component {
 | title    | modal页面的标题   | string  |  请输入支付密码  |
 | length    | 支付密码的长度   | number  |  6  |
 | borderColor   | 支付密码显示框的边框颜色    | string |  #C7C7C7  |
-| style    | 支付密码显示框的样式   | ViewProperties |  -  |
-| textStyle    | 支付密码圆点`●`的样式   | TextProperties |  -  |
+| style    | 支付密码显示框的样式   | ViewStyle |  -  |
+| textStyle    | 支付密码圆点`●`的样式   | TextStyle |  -  |
 
 
 #### InputView(支付密码显示框)
@@ -99,8 +99,8 @@ import { InputView } from 'react-native-pay-password';
 | length    | 支付密码的长度   | number  |  6  |
 | index   | 当前输入的位置   | number | -  |
 | borderColor   | 支付密码显示框的边框颜色    | string |  #C7C7C7  |
-| style    | 支付密码显示框的样式   | ViewProperties |  -  |
-| textStyle    | 支付密码圆点`●`的样式   | TextProperties |  -  |
+| style    | 支付密码显示框的样式   | ViewStyle |  -  |
+| textStyle    | 支付密码圆点`●`的样式   | TextStyle |  -  |
 
 
 #### Keyboard(支付密码键盘)

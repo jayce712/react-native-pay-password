@@ -1,6 +1,6 @@
 {
-  "name": "react-native-pay-password111",
-  "version": "0.0.1",
+  "name": "react-native-pay-password",
+  "version": "0.0.2",
   "description": "React Native的支付密码输入框",
   "main": "index.js",
   "typings": "./index.d.ts",
