@@ -41,8 +41,8 @@ export default class App extends Component {
 | clear    | 打开键盘时是否清空已输入   | boolean  |  true  |
 | length    | 支付密码的长度   | number  |  6  |
 | borderColor   | 支付密码显示框的边框颜色    | string |  #C7C7C7  |
-| style    | 支付密码显示框的样式   | ViewProperties |  -  |
-| textStyle    | 支付密码圆点`●`的样式   | TextProperties |  -  |
+| style    | 支付密码显示框的样式   | ViewStyle |  -  |
+| textStyle    | 支付密码圆点`●`的样式   | TextStyle |  -  |
 
 
 #### PasswordModal(基于InputView和Keyboard)
