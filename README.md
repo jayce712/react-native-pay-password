@@ -1,21 +1,39 @@
-### react-native-pay-password
+## react-native-pay-password
 
 > 仿支付宝支付密码输入框
 
-#### Install
+### Install
+
 ```
 $ npm install react-native-pay-password --save
 ```
 
-#### Usage
+### Usage
 
 > 共导出4个组件，其中`PasswordInput`和`PasswordModal`这两个组件已能满足大部分使用情况。需要定制化的时候请使用`InputView`和`Keyboard`两个组件搭配使用。
 
-- PasswordInput(基于InputView和Keyboard)
+#### PasswordInput(基于InputView和Keyboard)
 
 ```
-import { PasswordInput } from 'react-native-pay-password';
+import { PasswordInput } from 'react-native-pay-password'
+
+export default class App extends Component {
+
+  state = { password: '' }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text}>{this.state.password}</Text>
+        <PasswordInput onDone={(data) => { this.setState({ password: data }) }} />
+      </View>
+    );
+  }
+}
+
 ``` 
+
+![QQ20170706-112715-HD.gif](./QQ20170706-112715-HD.gif)
 
 | 属性        | 说明           | 类型               | 默认值       |
 |------------|----------------|--------------------|--------------|
@@ -27,11 +45,35 @@ import { PasswordInput } from 'react-native-pay-password';
 | textStyle    | 支付密码圆点`●`的样式   | TextProperties |  -  |
 
 
-- PasswordModal(基于InputView和Keyboard)
+#### PasswordModal(基于InputView和Keyboard)
+
+> 打开此modal请用refs调用内部show()方法
 
 ```
-import { PasswordModal } from 'react-native-pay-password';
+import { PasswordModal } from 'react-native-pay-password'
+
+export default class App extends Component {
+
+  state = { password: '' }
+
+  onPress() {
+    this.refs.modal.show();
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <Text style={styles.text} onPress={() => { this.onPress() }}>点击打开支付密码modal</Text>
+        <Text style={styles.text}>{this.state.password}</Text>
+        <PasswordModal ref='modal' onDone={(data) => { this.setState({ password: data }) }} />
+      </View>
+    );
+  }
+}
 ``` 
+
+![QQ20170706-113555-HD.gif](./QQ20170706-113555-HD.gif)
+
 
 | 属性        | 说明           | 类型               | 默认值       |
 |------------|----------------|--------------------|--------------|
@@ -46,7 +88,7 @@ import { PasswordModal } from 'react-native-pay-password';
 | textStyle    | 支付密码圆点`●`的样式   | TextProperties |  -  |
 
 
-- InputView(支付密码显示框)
+#### InputView(支付密码显示框)
 
 ```
 import { InputView } from 'react-native-pay-password';
@@ -61,7 +103,7 @@ import { InputView } from 'react-native-pay-password';
 | textStyle    | 支付密码圆点`●`的样式   | TextProperties |  -  |
 
 
-- Keyboard(支付密码键盘)
+#### Keyboard(支付密码键盘)
 
 ```
 import { Keyboard } from 'react-native-pay-password';
