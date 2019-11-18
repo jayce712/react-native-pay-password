@@ -1,15 +1,29 @@
 {
   "name": "react-native-pay-password",
-  "version": "0.0.2",
-  "description": "React Native的支付密码输入框",
-  "main": "index.js",
-  "typings": "./index.d.ts",
+  "version": "1.0.0",
+  "description": "react native pay password",
+  "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp dev",
+    "build": "rm -rf lib && gulp",
+    "push": "git push && git push --tags",
+    "patch": "npm run build && npm version patch",
+    "minor": "npm run build && npm version minor",
+    "pub:patch": "npm run patch && npm publish && npm run push",
+    "pub:minor": "npm run minor && npm publish && npm run push",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "tslint \"src/**/*.ts\" \"src/**/*.tsx\"",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "tslint --fix",
+      "git add"
+    ]
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Lockie-cn/react-native-pay-password.git"
+    "url": "git+https://github.com/FE-Lockie/react-native-pay-password.git"
   },
   "keywords": [
     "React Native",
@@ -17,10 +31,31 @@
     "pay password",
     "payment password"
   ],
-  "author": "Lockie-cn",
-  "license": "ISC",
+  "files": [
+    "lib",
+    "README.md",
+    "README_zh-CN.md"
+  ],
+  "author": "FE-Lockie",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Lockie-cn/react-native-pay-password/issues"
+    "url": "https://github.com/FE-Lockie/react-native-pay-password/issues"
   },
-  "homepage": "https://github.com/Lockie-cn/react-native-pay-password#readme"
+  "homepage": "https://github.com/FE-Lockie/react-native-pay-password#readme",
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-native": "^0.60.22",
+    "gulp": "^4.0.2",
+    "gulp-typescript": "^5.0.1",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.2",
+    "merge2": "^1.3.0",
+    "tslint": "^5.20.1",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.1.0",
+    "typescript": "^3.7.2"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.58.0"
+  }
 }
