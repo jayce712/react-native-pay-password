@@ -19,7 +19,7 @@ const App = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Example1 />
-      {/* <Example2 /> */}
+      <Example2 />
     </SafeAreaView>
   );
 };

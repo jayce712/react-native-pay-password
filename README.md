@@ -13,6 +13,9 @@ $ npm install react-native-pay-password --save
 > Export 4 components,if `PasswordInput` or `PasswordModal` doesn't meet your needs,you should use `InputView` and `Keyboard` to have a try.
 
 ### PasswordInput(based InputView and Keyboard)
+
+<img src="https://cdn.nlark.com/yuque/0/2019/gif/513836/1574087918494-320e39ef-3679-4c32-95c5-7f37b729a547.gif" width="200">
+
 | Properties | Description | Type | Default |
 | --- | --- | --- | --- |
 | clear | clear password value when press the password input | boolean | true |
@@ -21,6 +24,9 @@ $ npm install react-native-pay-password --save
 | keyboardProps | keyborad function component props | KeyboardProps | - |
 
 ### PasswordModal(based InputView and Keyboard)
+
+<img src="https://cdn.nlark.com/yuque/0/2019/gif/513836/1574087924373-98800ba1-a549-4447-a008-a728eb5981af.gif" width="200">
+
 | Properties | Description | Type | Default |
 | --- | --- | --- | --- |
 | clear | clear password value when press the password input | boolean | true |

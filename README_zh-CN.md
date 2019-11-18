@@ -13,6 +13,9 @@ $ npm install react-native-pay-password --save
 > 共导出4个组件，如果`PasswordInput`或者`PasswordModal`不能满足你的需求，你可以使用`InputView`和`Keyboard`组合试一试。
 
 ### PasswordInput(基于InputView和Keyboard)
+
+<img src="https://cdn.nlark.com/yuque/0/2019/gif/513836/1574087918494-320e39ef-3679-4c32-95c5-7f37b729a547.gif" width="200">
+
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | clear | 打开键盘时是否清空已输入的密码 | boolean | true |
@@ -21,6 +24,9 @@ $ npm install react-native-pay-password --save
 | keyboardProps | Keyboard组件props | KeyboardProps | - |
 
 ### PasswordModal(基于InputView和Keyboard)
+
+<img src="https://cdn.nlark.com/yuque/0/2019/gif/513836/1574087924373-98800ba1-a549-4447-a008-a728eb5981af.gif" width="200">
+
 | 属性 | 说明 | 类型 | 默认值 |
 | --- | --- | --- | --- |
 | clear | 打开键盘时是否清空已输入的密码 | boolean | true |
