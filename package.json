@@ -1,6 +1,6 @@
 {
   "name": "react-native-pay-password",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "react native pay password",
   "main": "lib/index.js",
   "scripts": {
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FE-Lockie/react-native-pay-password.git"
+    "url": "git+https://github.com/jayce712/react-native-pay-password.git"
   },
   "keywords": [
     "React Native",
@@ -36,12 +36,12 @@
     "README.md",
     "README_zh-CN.md"
   ],
-  "author": "FE-Lockie",
+  "author": "jayce712",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/FE-Lockie/react-native-pay-password/issues"
+    "url": "https://github.com/jayce712/react-native-pay-password/issues"
   },
-  "homepage": "https://github.com/FE-Lockie/react-native-pay-password#readme",
+  "homepage": "https://github.com/jayce712/react-native-pay-password#readme",
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-native": "^0.60.22",
